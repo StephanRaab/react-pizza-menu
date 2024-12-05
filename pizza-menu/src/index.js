@@ -80,8 +80,13 @@ function Menu() {
 }
 
 function Footer() {
+    const hour = new Date().getHours();
+    const openHour = 12;
+    const closedHour = 22;
+    const isOpen = hour >= openHour && hour < closedHour;
+
     return (
-        <footer>{new Date().toLocaleTimeString()}. We're currently open</footer>
+        <footer></footer>
     )
 }
 
