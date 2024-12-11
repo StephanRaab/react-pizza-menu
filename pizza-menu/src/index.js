@@ -27,9 +27,9 @@ function Menu() {
       <main className="menu">
         <h2>Our Menu</h2>
         <ul className="pizzas">
-          {pizzaData.pizzas.map((pizza, i) => {
-            return <Pizza pizza={pizza} key={i + pizza.name} />;
-          })}
+          {pizzaData.pizzas.map((pizza, i) => (
+            <Pizza pizza={pizza} key={i + pizza.name} />
+          ))}
         </ul>
       </main>
     </section>
