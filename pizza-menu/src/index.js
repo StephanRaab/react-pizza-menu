@@ -23,6 +23,7 @@ function Header() {
 
 function Menu() {
   const pizzas = pizzaData.pizzas;
+  //   const pizzas = []; //  this is just here for testing
 
   return (
     <section>
@@ -30,11 +31,18 @@ function Menu() {
         <h2>Our Menu</h2>
 
         {pizzas.length > 0 ? (
-          <ul className="pizzas">
-            {pizzas.map((pizza, i) => (
-              <Pizza pizza={pizza} key={i + pizza.name} />
-            ))}
-          </ul>
+          <>
+            <p>
+              Authentic Italian cuisine. All from our stone oven, all organic,
+              all local, all delicious.
+            </p>
+
+            <ul className="pizzas">
+              {pizzas.map((pizza, i) => (
+                <Pizza pizza={pizza} key={i + pizza.name} />
+              ))}
+            </ul>
+          </>
         ) : (
           <p>We're still working on our menu. Please come back later.</p>
         )}
@@ -79,12 +87,10 @@ function Footer() {
   );
 }
 
-function Order(props) {
+function Order({ closingTime }) {
   return (
     <div className="order">
-      <p>
-        We're open until {props.closingTime}:00. Come visit us or order online!{" "}
-      </p>
+      <p>We're open until {closingTime}:00. Come visit us or order online! </p>
 
       <button className="btn">Order Now</button>
     </div>
